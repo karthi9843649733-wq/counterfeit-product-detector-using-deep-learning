@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counterfeit Product Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Counterfeit Product Detection</h1>
+    <p class="subtitle">Upload product image to verify authenticity</p>
+
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" id="imageInput" name="image" accept="image/*" required>
+        
+        <div class="preview">
+            <img id="previewImage" src="" alt="Image Preview">
+        </div>
+
+        <button type="submit">Check Product</button>
+    </form>
+
+    <div class="result">
+        <h2 id="prediction"></h2>
+        <p id="confidence"></p>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
